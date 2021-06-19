@@ -1,8 +1,8 @@
 package com.example.sorteio_numeros
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import java.util.*
@@ -19,13 +19,14 @@ class MainActivity : AppCompatActivity() {
         texto = findViewById(R.id.txtNumero)
         botao = findViewById(R.id.btnSortear)
         botao.setOnClickListener {
-            SortearNumero()
+            sortearNumero()
         }
     }
 
-    fun SortearNumero(){
-        var resultado = Random().nextInt(11).toString()
+    @SuppressLint("SetTextI18n")
+    fun sortearNumero(){
+        val resultado = Random().nextInt(11).toString()
 
-        texto.text = "O número é $resultado"
+        texto.setText("O número é $resultado")
     }
 }
